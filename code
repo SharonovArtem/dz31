@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace dzkurs
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int convertedNumber = 0;
+            string gotNumber = "";
+            bool isWorking = true;
+
+            while (isWorking)
+            {
+                Parse(gotNumber, convertedNumber, ref isWorking);
+            }
+        } 
+        
+        static void Parse(string gotNumber, int convertedNumber, ref bool isWorking)
+        {
+            Console.WriteLine("Введите число");
+            gotNumber = Console.ReadLine();
+
+            bool successfulConvertation = int.TryParse(gotNumber, out convertedNumber);
+
+            if (successfulConvertation)
+            {
+                Console.WriteLine(convertedNumber);
+                isWorking = false;
+            }
+            else
+            {
+                Console.WriteLine("Попробуйте ещё раз");
+            }
+        }
+    }
+}
