@@ -10,32 +10,34 @@ namespace dzkurs
     {
         static void Main(string[] args)
         {
+            ToParse();
+        }
+
+        static int ToParse()
+        {
             int convertedNumber = 0;
             string gotNumber = "";
             bool isWorking = true;
 
             while (isWorking)
-            {
-                Parse(gotNumber, convertedNumber, ref isWorking);
-            }
-        } 
-        
-        static void Parse(string gotNumber, int convertedNumber, ref bool isWorking)
-        {
-            Console.WriteLine("Введите число");
-            gotNumber = Console.ReadLine();
+            {               
+                Console.WriteLine("Введите число");
+                gotNumber = Console.ReadLine();
 
-            bool successfulConvertation = int.TryParse(gotNumber, out convertedNumber);
+                bool successfulConvertation = int.TryParse(gotNumber, out convertedNumber);
 
-            if (successfulConvertation)
-            {
-                Console.WriteLine(convertedNumber);
-                isWorking = false;
+                if (successfulConvertation)
+                {
+                    Console.WriteLine(convertedNumber);
+                    isWorking = false;
+                }
+                else
+                {
+                    Console.WriteLine("Попробуйте ещё раз");
+                }
             }
-            else
-            {
-                Console.WriteLine("Попробуйте ещё раз");
-            }
+            
+            return convertedNumber;
         }
     }
 }
