@@ -10,23 +10,21 @@ namespace dzkurs
     {
         static void Main(string[] args)
         {
-            ToParse();
+            ReturnParsedNumber();
         }
 
-        static int ToParse()
+        static int ReturnParsedNumber()
         {
             int convertedNumber = 0;
-            string gotNumber = "";
+            string userInput = "";
             bool isWorking = true;
 
             while (isWorking)
-            {               
+            {
                 Console.WriteLine("Введите число");
-                gotNumber = Console.ReadLine();
+                userInput = Console.ReadLine();
 
-                bool successfulConvertation = int.TryParse(gotNumber, out convertedNumber);
-
-                if (successfulConvertation)
+                if (int.TryParse(userInput, out convertedNumber))
                 {
                     Console.WriteLine(convertedNumber);
                     isWorking = false;
@@ -36,7 +34,7 @@ namespace dzkurs
                     Console.WriteLine("Попробуйте ещё раз");
                 }
             }
-            
+
             return convertedNumber;
         }
     }
