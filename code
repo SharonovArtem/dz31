@@ -10,12 +10,12 @@ namespace dzkurs
     {
         static void Main(string[] args)
         {
-            ReturnParsedNumber();
+            int number = 0;
+            GetNumber(number);
         }
 
-        static int ReturnParsedNumber()
+        static int GetNumber(int number)
         {
-            int convertedNumber = 0;
             string userInput = "";
             bool isWorking = true;
 
@@ -24,9 +24,9 @@ namespace dzkurs
                 Console.WriteLine("Введите число");
                 userInput = Console.ReadLine();
 
-                if (int.TryParse(userInput, out convertedNumber))
+                if (int.TryParse(userInput, out number))
                 {
-                    Console.WriteLine(convertedNumber);
+                    Console.WriteLine(number);
                     isWorking = false;
                 }
                 else
@@ -35,7 +35,7 @@ namespace dzkurs
                 }
             }
 
-            return convertedNumber;
+            return number;
         }
     }
 }
