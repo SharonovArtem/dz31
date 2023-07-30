@@ -11,11 +11,12 @@ namespace dzkurs
         static void Main(string[] args)
         {
             int number = 0;
-            GetNumber(number);
+            GetNumber(out number);
         }
 
-        static int GetNumber(int number)
+        static void GetNumber(out int number)
         {
+            number = 0;
             string userInput = "";
             bool isWorking = true;
 
@@ -34,6 +35,9 @@ namespace dzkurs
                     Console.WriteLine("Попробуйте ещё раз");
                 }
             }
+        }
+    }
+}
 
             return number;
         }
