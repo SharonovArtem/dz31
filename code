@@ -11,16 +11,14 @@ namespace dzkurs
         static void Main(string[] args)
         {
             int number = 0;
-            GetNumber(out number);
+            GetNumber(number);
         }
 
-        static void GetNumber(out int number)
+        static int GetNumber(int number)
         {
-            number = 0;
             string userInput = "";
-            bool isWorking = true;
 
-            while (isWorking)
+            while (int.TryParse(userInput, out number) == false)
             {
                 Console.WriteLine("Введите число");
                 userInput = Console.ReadLine();
@@ -28,16 +26,12 @@ namespace dzkurs
                 if (int.TryParse(userInput, out number))
                 {
                     Console.WriteLine(number);
-                    isWorking = false;
                 }
                 else
                 {
                     Console.WriteLine("Попробуйте ещё раз");
                 }
             }
-        }
-    }
-}
 
             return number;
         }
