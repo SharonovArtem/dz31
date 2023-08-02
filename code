@@ -10,8 +10,7 @@ namespace dzkurs
     {
         static void Main(string[] args)
         {
-            int number = 0;
-            GetNumber(number);
+            int number = GetNumber();
         }
 
         static int GetNumber(int number)
