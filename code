@@ -13,8 +13,9 @@ namespace dzkurs
             int number = GetNumber();
         }
 
-        static int GetNumber(int number)
+        static int GetNumber()
         {
+            int number;
             string userInput = "";
 
             while (int.TryParse(userInput, out number) == false)
