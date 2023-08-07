@@ -1,8 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace dzkurs
 {
@@ -10,7 +7,11 @@ namespace dzkurs
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Введите число");
+
             int number = GetNumber();
+
+            Console.WriteLine(number);
         }
 
         static int GetNumber()
@@ -20,17 +21,7 @@ namespace dzkurs
 
             while (int.TryParse(userInput, out number) == false)
             {
-                Console.WriteLine("Введите число");
                 userInput = Console.ReadLine();
-
-                if (int.TryParse(userInput, out number))
-                {
-                    Console.WriteLine(number);
-                }
-                else
-                {
-                    Console.WriteLine("Попробуйте ещё раз");
-                }
             }
 
             return number;
